@@ -192,7 +192,7 @@ const DPP = ADV.concat([
   'Heal Ball',
   'Heat Rock',
   'Icicle Plate',
-  'Icy Rock',
+  'Â÷°¡¿î¹ÙÀ§',
   'Insect Plate',
   'Iron Ball',
   'Iron Plate',
@@ -295,7 +295,7 @@ const BW = DPP.concat([
 
 export const MEGA_STONES: {[species: string]: string} = {
   Absolite: 'Absol',
-  Abomasite: 'Abomasnow',
+  Abomasite: '´«¼³¿Õ',
   Aerodactylite: 'Aerodactyl',
   Aggronite: 'Aggron',
   Alakazite: 'Alakazam',

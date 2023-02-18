@@ -123,7 +123,7 @@ const DPP = ADV.concat([
   'Slow Start',
   'Sniper',
   'Snow Cloak',
-  'Snow Warning',
+  '´«ÆÛ¶ß¸®±â',
   'Solar Power',
   'Solid Rock',
   'Stall',

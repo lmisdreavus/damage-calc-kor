@@ -387,7 +387,7 @@ export function getFlingPower(item?: string) {
   if (FLING_70.has(item)) return 70;
   if (FLING_60.has(item)) return 60;
   if (['Eject Pack', 'Sharp Beak', 'Dubious Disc'].includes(item)) return 50;
-  if (['Icy Rock', 'Eviolite', 'Lucky Punch'].includes(item)) return 40;
+  if (['차가운바위', 'Eviolite', 'Lucky Punch'].includes(item)) return 40;
   if (FLING_30.has(item)) return 30;
   if (item === 'TR82') return 20;
   if (item.includes('Berry') || FLING_10.has(item)) return 10;

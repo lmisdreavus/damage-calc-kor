@@ -1,4 +1,4 @@
-﻿import * as I from './interface';
+import * as I from './interface';
 import {toID, extend, DeepPartial, assignWithout} from '../util';
 
 export interface SpeciesData {
@@ -2694,11 +2694,11 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Tangela: {nfe: true},
   Togetic: {nfe: true},
   Yanma: {nfe: true},
-  Abomasnow: {
+  눈설왕: {
     types: ['Grass', 'Ice'],
     bs: {hp: 90, at: 92, df: 75, sa: 92, sd: 85, sp: 60},
     weightkg: 135.5,
-    abilities: {0: 'Snow Warning'},
+    abilities: {0: '눈퍼뜨리기'},
   },
   Ambipom: {
     types: ['Normal'],
@@ -3634,7 +3634,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 60, at: 62, df: 50, sa: 62, sd: 60, sp: 40},
     weightkg: 50.5,
     nfe: true,
-    abilities: {0: 'Snow Warning'},
+    abilities: {0: '눈퍼뜨리기'},
   },
   Spiritomb: {
     types: ['Ghost', 'Dark'],
@@ -5018,7 +5018,7 @@ delete BW['Pichu'].otherFormes;
 delete BW['Pichu-Spiky-eared'];
 
 const XY_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
-  Abomasnow: {otherFormes: ['Abomasnow-Mega']},
+  눈설왕: {otherFormes: ['눈설왕-Mega']},
   Absol: {otherFormes: ['Absol-Mega']},
   Aerodactyl: {otherFormes: ['Aerodactyl-Mega']},
   Aggron: {otherFormes: ['Aggron-Mega']},
@@ -5501,12 +5501,12 @@ const XY_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 47,
     abilities: {0: 'Contrary'},
   },
-  'Abomasnow-Mega': {
+  '눈설왕-Mega': {
     types: ['Grass', 'Ice'],
     bs: {hp: 90, at: 132, df: 105, sa: 132, sd: 105, sp: 30},
     weightkg: 185,
-    abilities: {0: 'Snow Warning'},
-    baseSpecies: 'Abomasnow',
+    abilities: {0: '눈퍼뜨리기'},
+    baseSpecies: '눈설왕',
   },
   'Absol-Mega': {
     types: ['Dark'],

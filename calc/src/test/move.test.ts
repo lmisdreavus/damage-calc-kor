@@ -2,7 +2,7 @@ import {Move} from '../index';
 
 describe('Move', () => {
   test('clone', () => {
-    const m = new Move(7, 'Blizzard', {useZ: true});
+    const m = new Move(7, '´«º¸¶ó', {useZ: true});
     expect(m.name).toBe('Subzero Slammer');
     expect(m.bp).toBe(185);
 

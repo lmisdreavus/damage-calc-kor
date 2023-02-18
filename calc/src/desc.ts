@@ -553,7 +553,7 @@ function getEndOfTurn(
     if (!defender.hasAbility('Magic Guard')) {
       // 1/16 in gen 1, 1/8 in gen 2 onwards
       damage -= Math.floor(defender.maxHP() / (gen.num >= 2 ? 8 : 16));
-      texts.push('Leech Seed damage');
+      texts.push('¾¾»Ñ¸®±â damage');
     }
   }
 
@@ -565,7 +565,7 @@ function getEndOfTurn(
       texts.push('Liquid Ooze damage');
     } else {
       damage += recovery;
-      texts.push('Leech Seed recovery');
+      texts.push('¾¾»Ñ¸®±â recovery');
     }
   }
 
@@ -945,7 +945,7 @@ function buildDescription(description: RawDesc, attacker: Pokemon, defender: Pok
     output += ' with an ally\'s Friend Guard';
   }
   if (description.isAuroraVeil) {
-    output += ' with an ally\'s Aurora Veil';
+    output += ' with an ally\'s ¿À·Î¶óº£ÀÏ';
   }
   if (description.isCritical) {
     output += ' on a critical hit';

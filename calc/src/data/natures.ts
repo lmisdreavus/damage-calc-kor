@@ -17,7 +17,7 @@ export const NATURES: {[name: string]: [I.StatID, I.StatID]} = {
   Lax: ['def', 'spd'],
   Lonely: ['atk', 'def'],
   Mild: ['spa', 'def'],
-  Modest: ['spa', 'atk'],
+  Á¶½É: ['spa', 'atk'],
   Naive: ['spe', 'spd'],
   Naughty: ['atk', 'spd'],
   Quiet: ['spa', 'spe'],

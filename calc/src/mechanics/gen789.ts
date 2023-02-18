@@ -1420,14 +1420,14 @@ export function calculateFinalModsSMSSSV(
 
   if (field.defenderSide.isReflect && move.category === 'Physical' &&
       !isCritical && !field.defenderSide.isAuroraVeil) {
-    // doesn't stack with Aurora Veil
+    // doesn't stack with 오로라베일
     finalMods.push(field.gameType !== 'Singles' ? 2732 : 2048);
     desc.isReflect = true;
   } else if (
     field.defenderSide.isLightScreen && move.category === 'Special' &&
     !isCritical && !field.defenderSide.isAuroraVeil
   ) {
-    // doesn't stack with Aurora Veil
+    // doesn't stack with 오로라베일
     finalMods.push(field.gameType !== 'Singles' ? 2732 : 2048);
     desc.isLightScreen = true;
   }

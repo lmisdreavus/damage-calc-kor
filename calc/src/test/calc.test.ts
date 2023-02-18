@@ -243,25 +243,25 @@ describe('calc', () => {
       if (gen > 7) {
         test(`Multiscale and Shadow Shield halves damage even if there are hazzards if holding Heavy-Duty Boots (gen ${gen})`, () => {
           const field = Field({defenderSide: {isSR: true}});
-          const result = calculate(Pokemon('Abomasnow'), dragonite2, Move('Blizzard'), field);
+          const result = calculate(Pokemon('´«¼³¿Õ'), dragonite2, Move('´«º¸¶ó'), field);
           expect(result.range()).toEqual([222, 264]);
           expect(result.desc()).toBe(
-            '0 SpA Abomasnow Blizzard vs. 0 HP / 0 SpD Shadow Shield Dragonite: 222-264 (68.7 - 81.7%) -- guaranteed 2HKO'
+            '0 SpA ´«¼³¿Õ ´«º¸¶ó vs. 0 HP / 0 SpD Shadow Shield Dragonite: 222-264 (68.7 - 81.7%) -- guaranteed 2HKO'
           );
         });
       }
       test(`Multiscale and Shadow Shield should not halve damage if less than 100% HP (gen ${gen})`, () => {
-        const result = calculate(Pokemon('Abomasnow'), dragonite1, Move('Ice Shard'));
+        const result = calculate(Pokemon('´«¼³¿Õ'), dragonite1, Move('Ice Shard'));
         expect(result.range()).toEqual([168, 204]);
         expect(result.desc()).toBe(
-          '0 Atk Abomasnow Ice Shard vs. 0 HP / 0 Def Dragonite: 168-204 (52 - 63.1%) -- guaranteed OHKO'
+          '0 Atk ´«¼³¿Õ Ice Shard vs. 0 HP / 0 Def Dragonite: 168-204 (52 - 63.1%) -- guaranteed OHKO'
         );
       });
       test(`Multiscale and Shadow Shield Should halve damage taken (gen ${gen})`, () => {
-        const result = calculate(Pokemon('Abomasnow'), dragonite, Move('Ice Shard'));
+        const result = calculate(Pokemon('´«¼³¿Õ'), dragonite, Move('Ice Shard'));
         expect(result.range()).toEqual([84, 102]);
         expect(result.desc()).toBe(
-          '0 Atk Abomasnow Ice Shard vs. 0 HP / 0 Def Multiscale Dragonite: 84-102 (26 - 31.5%) -- guaranteed 4HKO'
+          '0 Atk ´«¼³¿Õ Ice Shard vs. 0 HP / 0 Def Multiscale Dragonite: 84-102 (26 - 31.5%) -- guaranteed 4HKO'
         );
       });
     });
@@ -507,17 +507,17 @@ describe('calc', () => {
           );
         });
         test('allAdjacentFoes', () => {
-          const gengar = Pokemon('Gengar', {nature: 'Modest', evs: {spa: 252}});
+          const gengar = Pokemon('Gengar', {nature: 'Á¶½É', evs: {spa: 252}});
           const blissey = Pokemon('Chansey', {
             item: 'Leftovers',
             nature: 'Bold',
             evs: {hp: 252, def: 252},
           });
           const field = Field({gameType: 'Doubles'});
-          const result = calculate(gengar, blissey, Move('Blizzard'), field);
+          const result = calculate(gengar, blissey, Move('´«º¸¶ó'), field);
           expect(result.range()).toEqual([69, 82]);
           expect(result.desc()).toBe(
-            '252+ SpA Gengar Blizzard vs. 252 HP / 0 SpD Chansey: 69-82 (9.8 - 11.6%)'
+            '252+ SpA Gengar ´«º¸¶ó vs. 252 HP / 0 SpD Chansey: 69-82 (9.8 - 11.6%)'
           );
         });
       });
@@ -626,7 +626,7 @@ describe('calc', () => {
         const result = calculate(
           Pokemon('Gengar', {
             item: 'Life Orb',
-            nature: 'Modest',
+            nature: 'Á¶½É',
             evs: {spa: 252},
           }),
           Pokemon('Chansey', {
@@ -646,9 +646,9 @@ describe('calc', () => {
 
   describe('Gen 7', () => {
     inGen(7, ({calculate, Pokemon, Move, Field}) => {
-      const abomasnow = Pokemon('Abomasnow', {
-        item: 'Icy Rock',
-        ability: 'Snow Warning',
+      const ´«¼³¿Õ = Pokemon('´«¼³¿Õ', {
+        item: 'Â÷°¡¿î¹ÙÀ§',
+        ability: '´«ÆÛ¶ß¸®±â',
         nature: 'Hasty',
         evs: {atk: 252, spd: 4, spe: 252},
       });
@@ -664,7 +664,7 @@ describe('calc', () => {
         const result = calculate(
           Pokemon('Gengar', {
             item: 'Life Orb',
-            nature: 'Modest',
+            nature: 'Á¶½É',
             evs: {spa: 252},
             boosts: {spa: 3},
           }),
@@ -684,27 +684,27 @@ describe('calc', () => {
 
       test('Z-Move critical hits', () => {
         const zMove = Move('Wood Hammer', {useZ: true, isCrit: true});
-        const result = calculate(abomasnow, hoopa, zMove);
+        const result = calculate(´«¼³¿Õ, hoopa, zMove);
         expect(result.range()).toEqual([555, 654]);
         expect(result.desc()).toBe(
-          '252 Atk Abomasnow Bloom Doom (190 BP) vs. 32 HP / 0 Def Hoopa-Unbound on a critical hit: 555-654 (179.6 - 211.6%) -- guaranteed OHKO'
+          '252 Atk ´«¼³¿Õ Bloom Doom (190 BP) vs. 32 HP / 0 Def Hoopa-Unbound on a critical hit: 555-654 (179.6 - 211.6%) -- guaranteed OHKO'
         );
       });
 
       test('Recoil & Recovery', () => {
-        let result = calculate(abomasnow, hoopa, Move('Wood Hammer'));
+        let result = calculate(´«¼³¿Õ, hoopa, Move('Wood Hammer'));
         expect(result.range()).toEqual([234, 276]);
         expect(result.desc()).toBe(
-          '252 Atk Abomasnow Wood Hammer vs. 32 HP / 0 Def Hoopa-Unbound: 234-276 (75.7 - 89.3%) -- guaranteed 2HKO'
+          '252 Atk ´«¼³¿Õ Wood Hammer vs. 32 HP / 0 Def Hoopa-Unbound: 234-276 (75.7 - 89.3%) -- guaranteed 2HKO'
         );
         const recoil = result.recoil();
         expect(recoil.recoil).toEqual([24, 28.3]);
         expect(recoil.text).toBe('24 - 28.3% recoil damage');
 
-        result = calculate(hoopa, abomasnow, Move('Drain Punch'));
+        result = calculate(hoopa, ´«¼³¿Õ, Move('Drain Punch'));
         expect(result.range()).toEqual([398, 470]);
         expect(result.desc()).toBe(
-          '224 Atk Choice Band Hoopa-Unbound Drain Punch vs. 0 HP / 0- Def Abomasnow: 398-470 (123.9 - 146.4%) -- guaranteed OHKO'
+          '224 Atk Choice Band Hoopa-Unbound Drain Punch vs. 0 HP / 0- Def ´«¼³¿Õ: 398-470 (123.9 - 146.4%) -- guaranteed OHKO'
         );
         const recovery = result.recovery();
         expect(recovery.recovery).toEqual([161, 161]);
@@ -712,7 +712,7 @@ describe('calc', () => {
       });
       test('Big Root', () => {
         const bigRoot = Pokemon('Blissey', {item: 'Big Root'});
-        const result = calculate(bigRoot, abomasnow, Move('Drain Punch'));
+        const result = calculate(bigRoot, ´«¼³¿Õ, Move('Drain Punch'));
         expect(result.range()).toEqual([38, 46]);
         expect(result.recovery().recovery).toEqual([24, 29]);
       });
@@ -733,11 +733,11 @@ describe('calc', () => {
             isTailwind: true,
           },
         });
-        const result = calculate(abomasnow, hoopa, Move('Blizzard'), field);
+        const result = calculate(´«¼³¿Õ, hoopa, Move('´«º¸¶ó'), field);
         expect(result.range()).toEqual([50, 59]);
         expect(result.desc()).toBe(
-          '0 SpA Abomasnow Helping Hand Blizzard vs. 32 HP / 0 SpD Hoopa-Unbound through Light Screen with an ally\'s Friend Guard: 50-59 (16.1 - 19%)' +
-            ' -- 91.4% chance to 3HKO after Stealth Rock, 1 layer of Spikes, hail damage, Leech Seed damage, and Grassy Terrain recovery'
+          '0 SpA ´«¼³¿Õ Helping Hand ´«º¸¶ó vs. 32 HP / 0 SpD Hoopa-Unbound through Light Screen with an ally\'s Friend Guard: 50-59 (16.1 - 19%)' +
+            ' -- 91.4% chance to 3HKO after Stealth Rock, 1 layer of Spikes, hail damage, ¾¾»Ñ¸®±â damage, and Grassy Terrain recovery'
         );
       });
 
@@ -824,7 +824,7 @@ describe('calc', () => {
         const result = calculate(
           Pokemon('Gengar', {
             item: 'Life Orb',
-            nature: 'Modest',
+            nature: 'Á¶½É',
             evs: {spa: 252},
             boosts: {spa: 3},
           }),
@@ -863,17 +863,17 @@ describe('calc', () => {
       });
 
       test('% chance to OHKO', () => {
-        const abomasnow = Pokemon('Abomasnow', {
+        const ´«¼³¿Õ = Pokemon('´«¼³¿Õ', {
           level: 55,
           item: 'Choice Specs',
           evs: {spa: 252},
         });
         const deerling = Pokemon('Deerling', {evs: {hp: 36}});
-        const blizzard = Move('Blizzard');
+        const ´«º¸¶ó = Move('´«º¸¶ó');
         const hail = Field({weather: 'Hail'});
-        const result = calculate(abomasnow, deerling, blizzard, hail);
+        const result = calculate(´«¼³¿Õ, deerling, ´«º¸¶ó, hail);
         expect(result.desc()).toBe(
-          'Lvl 55 252 SpA Choice Specs Abomasnow Blizzard vs. 36 HP / 0 SpD Deerling: 236-278 (87.4 - 102.9%) -- 25% chance to OHKO'
+          'Lvl 55 252 SpA Choice Specs ´«¼³¿Õ ´«º¸¶ó vs. 36 HP / 0 SpD Deerling: 236-278 (87.4 - 102.9%) -- 25% chance to OHKO'
         );
       });
 
